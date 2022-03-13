@@ -1,10 +1,10 @@
 {
-  "name": "gql-ops-gen",
+  "name": "@lagunahealth/gql-generator",
   "version": "1.0.0",
   "description": "CLI tool that transforms graphql schema file to all possible queries and mutations",
   "main": "index.js",
   "bin": {
-    "gql-ops-gen": "./index.js"
+    "gql-generator": "./index.js"
   },
   "author": "Gabi Rousine <gabi@lagunahealth.com>",
   "license": "MIT",
