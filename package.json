@@ -1,5 +1,5 @@
 {
-  "name": "@LagunaHealth/gql-generator",
+  "name": "gql-generator",
   "version": "1.0.0",
   "description": "CLI tool that transforms graphql schema file to all possible queries and mutations",
   "main": "index.js",
