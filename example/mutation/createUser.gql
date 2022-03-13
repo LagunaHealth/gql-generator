@@ -1,0 +1,24 @@
+mutation {
+  createUser (
+    input: {
+      username: String!
+      email: String
+      phone: String
+      firstName: String
+      lastName: String
+      role: UserRoleEnum
+    }
+  ) {
+    user {
+      id
+      username
+      email
+      phone
+      firstName
+      lastName
+      role
+      createdAt
+      updatedAt
+    }
+  }
+}

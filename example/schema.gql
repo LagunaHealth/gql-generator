@@ -1,0 +1,42 @@
+input CreateUserInput {
+  username: String!
+  email: String
+  phone: String
+  firstName: String
+  lastName: String
+  role: UserRoleEnum = ACCOUNTANT
+}
+
+type CreateUserPayload {
+  user: User!
+}
+
+"""
+An ISO-8601 encoded UTC date string.
+"""
+scalar DateTime
+
+type Mutation {
+  createUser(input: CreateUserInput!): CreateUserPayload
+}
+
+type Query {
+  users(role: UserRoleEnum): [User!]!
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String
+  phone: String
+  firstName: String
+  lastName: String
+  role: UserRoleEnum!
+  createdAt: DateTime!
+  updatedAt: DateTime
+}
+
+enum UserRoleEnum {
+  ADMIN
+  ACCOUNTANT
+}

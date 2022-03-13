@@ -1,0 +1,15 @@
+query {
+  users (
+    role: UserRoleEnum
+  ) {
+    id
+    username
+    email
+    phone
+    firstName
+    lastName
+    role
+    createdAt
+    updatedAt
+  }
+}
