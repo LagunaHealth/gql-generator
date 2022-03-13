@@ -1,11 +1,21 @@
 {
   "name": "@lagunahealth/gql-generator",
   "version": "1.0.0",
-  "description": "CLI tool that transforms graphql schema file to all possible queries and mutations",
+  "description": "CLI tool that generates graphql queries and mutations placeholders from graphql schema file",
   "main": "index.js",
   "bin": {
     "gql-generator": "./index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LagunaHealth/gql-generator.git"
+  },
+  "keywords": [
+    "graphql",
+    "query",
+    "mutation",
+    "generator"
+  ],
   "author": "Gabi Rousine <gabi@lagunahealth.com>",
   "license": "MIT",
   "dependencies": {
