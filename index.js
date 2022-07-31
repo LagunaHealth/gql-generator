@@ -83,6 +83,10 @@ function isEnum(kind) {
   return kind === "EnumTypeDefinition";
 }
 
+function isUnion(kind) {
+  return kind === "UnionTypeDefinition";
+}
+
 function getType(arg) {
   return JSON.stringify(arg["type"]).replace('"', "").replace('"', "");
 }
@@ -105,7 +109,12 @@ function getInput(field, indent, folder, fileName) {
     const type = getType(arg);
     const Ctype = cleanType(type);
 
-    if (isGqlType(Ctype) || isEnum(getKind(Ctype)) || indent > options.depth) {
+    if (
+      isGqlType(Ctype) ||
+      isEnum(getKind(Ctype)) ||
+      isUnion(getKind(Ctype)) ||
+      indent > options.depth
+    ) {
       writeToFile(
         `    ${" ".repeat(2 * indent)}${arg["name"]}: ${type}`,
         folder,
@@ -134,7 +143,12 @@ function getOutput(field, indent, folder, fileName) {
     const type = getType(arg);
     const Ctype = cleanType(type);
 
-    if (isGqlType(Ctype) || isEnum(getKind(Ctype)) || indent > options.depth) {
+    if (
+      isGqlType(Ctype) ||
+      isEnum(getKind(Ctype)) ||
+      isUnion(getKind(Ctype)) ||
+      indent > options.depth
+    ) {
       writeToFile(
         `    ${" ".repeat(2 * indent)}${arg["name"]}`,
         folder,
