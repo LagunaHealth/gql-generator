@@ -1,6 +1,6 @@
 {
   "name": "@lagunahealth/gql-generator",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "CLI tool that generates graphql queries and mutations placeholders from graphql schema file",
   "main": "index.js",
   "bin": {
