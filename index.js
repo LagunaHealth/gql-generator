@@ -87,6 +87,10 @@ function isUnion(kind) {
   return kind === "UnionTypeDefinition";
 }
 
+function isJson(kind) {
+  return kind === "ScalarTypeDefinition";
+}
+
 function getType(arg) {
   return JSON.stringify(arg["type"]).replace('"', "").replace('"', "");
 }
@@ -113,6 +117,7 @@ function getInput(field, indent, folder, fileName) {
       isGqlType(Ctype) ||
       isEnum(getKind(Ctype)) ||
       isUnion(getKind(Ctype)) ||
+      isJson(getKind(Ctype)) ||
       indent > options.depth
     ) {
       writeToFile(
@@ -147,6 +152,7 @@ function getOutput(field, indent, folder, fileName) {
       isGqlType(Ctype) ||
       isEnum(getKind(Ctype)) ||
       isUnion(getKind(Ctype)) ||
+      isJson(getKind(Ctype)) ||
       indent > options.depth
     ) {
       writeToFile(
