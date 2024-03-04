@@ -44,6 +44,7 @@ const GqlTypes = [
   "DateTime",
   "ID",
   "JSONObject",
+  "JSON",
 ];
 
 const typeDef = readFileSync(options.input).toString("utf-8");
